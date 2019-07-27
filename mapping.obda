@@ -1,0 +1,144 @@
+[PrefixDeclaration]
+
+[SourceDeclaration]
+
+[MappingDeclaration] @Collection [[
+ 
+mappingId Clero
+target :URI/Clero#{CodClerigo} a :Clero;
+	:citado_em :URI/Documento#{CodClerigo};
+	:diocese_nascimento :URI/Diocese#{CodClerigo};
+	:diocese_sepultura :URI/Diocese#{CodClerigo};
+	:e_propriatario :URI/Bem#{CodClerigo};
+	:pertence_a :URI/Ordem_Sacra#{CodClerigo};
+	:tem_data_nascimento :URI/Data#{CodClerigo};
+	:tem_data_obito :URI/Data#{CodClerigo};
+	:tem_formacao :URI/Formacao#{CodClerigo};
+	:tem_funcao :URI/Funcao#{CodClerigo};
+	:tem_hierarquia :URI/Hierarquia#{CodClerigo};
+	:tem_lugar_nascimento :URI/Lugar#{CodClerigo};
+	:tem_lugar_sepultura :URI/Lugar#{CodClerigo};
+	:tem_oficio :URI/Oficio#{CodClerigo};
+	:tem_testamento :URI/Testamento#{CodClerigo};
+	:nomeProprio {NomeProprio};
+	:observacoes {Observacoes};
+	:patronimico {Patronimico};
+	:prebendado {Prebendado};
+	:terceiroElemento {TerceiroElemento};
+	:tipoTerceiroElemento {TipoTerceiroElem};
+source SELECT CodClerigo, NomeProprio, Observacoes, Patronimico, Prebendado, TerceiroElemento, TipoTerceiroElem FROM clerocatedralicio
+
+mappingId Documento
+target :URI/Documento#{CotaDocumento} a :Documento;
+	:pertence_ao_arquivo :URI/Arquivo#{CotaDocumento};
+	:criado_em :URI/Lugar#{CotaDocumento};
+	:e_controlado :URI/Historiador#{CotaDocumento};
+	:tem_data_criacao :URI/Data#{CotaDocumento};
+	:dataTopica {DataTopica};
+	:eclesiasticosRef {EclesiasticosRef};
+	:entEmiss {EntEmiss};
+	:fundoTitulo {FundoTitulo};
+	:maco {Maco};
+	:numClerigos {NumClerigos};
+	:numFolio {NumFolio};
+	:observacoes {Observacoes};
+	:publicado {Publicado};
+	:sumario {Sumario};
+	:sinaisVal {SinaisVal};
+source SELECT CotaDocumento, DataTopica, EclesiasticosRef, EntEmiss, FundoTitulo, Maco, NumClerigos, NumFolio, Observacoes, Sumario, SinaisVal From documentos
+
+mappingId Arquivo
+target :URI/Arquivo#{Arquivo} a :Arquivo;
+	:Arquivo :
+source SELECT  FROM 
+
+mappingId Bem
+target :URI/Bem#{CodBem} a :Bem;
+	:tem_data_aquisacao :URI/Data#{CodBem};
+	:descricao {Descricao};
+	:observacoes {Observacoes};
+	:rendaPreco {RendaPreco};
+	:tipoBem {TipoBem};
+	:tipoTransacao {TipoTransacao};
+source SELECT CodBem, Descricao, RendaPreco, TipoBem, TipoTransacao FROM bens
+
+mappingId Fundacao
+target :URI/Fundacao#{CodFund} a :Fundacao;
+	:tipoFundacao {TipoFundacao};
+	:observacoes {Observacoes};
+source SELECT CodFund, TipoFundacao, Observacoes FROM ultimasvontadesfundacoes
+
+mappingId Colacao
+target :URI/Colacao#{CodColacao} a :Colacao;
+	:catEclesiastica {CatEclsesiastica};
+source SELECT CodColacao, CatEclsesiastica From colacoes
+
+mappingId Data
+target :URI/Data#{} a :Data;
+
+mappingId Formacao
+target :URI/Formacao#{CodFormacao} a :Formacao;
+	:grau {Grau};
+	:curso {Curso};
+	:universidade {Universidade}
+source SELECT CodFormacao, Grau, Curso, Universidade From formacao
+
+mappingId Funcao
+target :URI/Funcao#{CodCleroFuncao} a :Funcao;
+	:funcaoEstatuto {FuncaoEstatuto};
+source SELECT CodCleroFuncao From cleroFuncoes
+
+mappingId Hierarquia
+target :URI/Hierarquia#{CodCleroCat} a :Hierarquia;
+	:tem_data_inicio :URI/Data#{CodCleroCat};
+	:tem_data_fim :URI/Data#{CodCleroCat};
+	:catEclesiastica {CatEclsesiastica};
+	:causSaida {CausaSaida};
+source SELECT CodCleroCat, CatEclsesiastica, causSaida From clerocathierarquia
+
+mappingId Igreja
+target :URI/Igreja#{} a :Igreja;
+source SELECT From 
+
+mappingId Diocese
+target :URI/Diocese#{} a :Diocese;
+source SELECT From 
+
+mappingId Oficio
+target :URI/Oficio#{CodOficio} a :Oficio;
+	:tipoOficio {TipoOficio};
+source SELECT CodOficio, TipoOficio From clerooficios
+
+mappingId Ordem_Sacra
+target :URI/Ordem_Sacra#{CodeOrdenacao} a :Ordem_Sacra;
+	:ordemSacra {OrdemSacra};
+source SELECT CodeOrdenacao, OrdemSacra From ordenssacras
+
+mappingId Pessoa
+target :URI/Pessoa#{CodIndRelacionado} a :Pessoa;
+	:e_dependente :URI/Clero#{CodIndRelacionado};
+	:tem_funcao :URI/Funcao#{CodIndRelacionado};
+	:nomeProprio {NomeProprio};
+	:observacoes {Observacoes};
+	:patronimico {Patronimico};
+	:terceiroElemento {TerceiroElemento};
+	:tipoTerceiroElemento {TipoTerceiroElem};
+	:estatuto {Estatuto};
+source SELECT CodIndRelacionado, NomeProprio, Observacoes, Patronimico, TerceiroElemento, TipoTerceiroElem, Estatuto From individuosrealcionados
+
+mappingId Historiador
+target :URI/Hitoriador#{historiador} a :Historiador;
+	:controla :URI/Documento#{historiador};
+	:estuda_clero :URI/Clero#{historiador};
+	:tem_data_controlo :URI/Data#{historiador};
+source SELECT historiador From clerocatedralicio
+
+mappingId Testamento
+target :URI/Testamento#{CodUltVontade} a :Testamento;
+	:redigido_em :URI/Data#{CodUltVontade};
+	:tem_herdeiro :URI/Pessoa#{CodUltVontade};
+	:tem_data_feitura :URI/Data#{CodUltVontade};
+	:situacaoDitou {SituacaoDitou};
+source SELECT CodUltVontade From ultimasvontades
+
+]]

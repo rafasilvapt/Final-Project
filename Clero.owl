@@ -1,0 +1,1629 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/nelsonsa12/ontologies/2018/3/untitled-ontology-12"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/nelsonsa12/ontologies/2018/3/untitled-ontology-12">
+    <Prefix name="" IRI="http://www.semanticweb.org/nelsonsa12/ontologies/2018/3/untitled-ontology-12#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="#Arquivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clero"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clero_Dependencia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Colacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diocese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Doacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Documento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Formacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Funcao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fundacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hierarquia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Historiador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Igreja"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lugar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oficio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ordem_Sacra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pessoa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Posicao_Clero_Doc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relacao_Parente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Testamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#citado_em"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controla"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#criado_em"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#diocese_nascimento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#diocese_sepultura"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#e_controlado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#e_dependente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#e_pessoa_dependente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#e_pessoa_parente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#e_proprietario"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#envolve_bem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#envolve_doacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#envolve_fundacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estuda_clero"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pertence_a"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pertence_ao_arquivo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#redigido_em"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#refere_a_documento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#situado_em"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_citacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_clero_dependencia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_aquisacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_controlo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_criacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_feitura"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_fim"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_inicio"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_nascimento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_data_obito"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_dependente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_formacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_funcao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_herdeiro"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_hieraquia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_lugar_nascimento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_lugar_sepultura"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_oficio"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_posicao_documento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_relacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_relacao_parente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_testamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tem_testemunha"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#arquivo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#catEclesiastica"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#causa"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#causaSaida"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#curso"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dataTopica"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data_de_aquisacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data_de_criacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data_de_feitura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data_de_obito"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data_fim"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data_inicio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descricao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#diocese"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dioceseNascimento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dioceseSepultura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#eclesioasticosRef"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#entEmiss"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#estatuto"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#funcaoEstatuto"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fundoTitulo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#grau"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#igreja"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#local"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#localFuncao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#localNascimento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#localRedigido"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#localSepultura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maco"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nomeDonatario"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nomeInstituicaoBenef"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nomeProprio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#normalizado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numClerigos"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numFolio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#observacoes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ordemSacra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#patronimico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#posicaoCleroDoc"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#prebendado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#rendaPreco"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sinaisVal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#situacaoDitou"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sumario"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#terceiroElemento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoBem"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoDependencia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoDoc"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoFundacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoOficio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoParentesco"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoTerceiroElemento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tipoTransacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#universidade"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#clero1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dataNasc1"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Clero"/>
+        <Class IRI="#Pessoa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diocese"/>
+        <Class IRI="#Lugar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Historiador"/>
+        <Class IRI="#Pessoa"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Arquivo"/>
+        <Class IRI="#Bem"/>
+        <Class IRI="#Clero"/>
+        <Class IRI="#Data"/>
+        <Class IRI="#Documento"/>
+        <Class IRI="#Formacao"/>
+        <Class IRI="#Hierarquia"/>
+        <Class IRI="#Igreja"/>
+        <Class IRI="#Lugar"/>
+        <Class IRI="#Oficio"/>
+        <Class IRI="#Ordem_Sacra"/>
+        <Class IRI="#Pessoa"/>
+        <Class IRI="#Testamento"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Clero"/>
+        <Class IRI="#Oficio"/>
+    </DisjointClasses>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatuto"/>
+        <NamedIndividual IRI="#clero1"/>
+        <Literal datatypeIRI="&xsd;string">auhauda dhduahdaudhad aaaaa</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#citado_em"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#controla"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#criado_em"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#diocese_nascimento"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#diocese_sepultura"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#e_controlado"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#e_dependente"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#e_proprietario"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#estuda_clero"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#pertence_a"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#pertence_ao_arquivo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#redigido_em"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#situado_em"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_aquisacao"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_controlo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_criacao"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_feitura"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_fim"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_inicio"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_nascimento"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_data_obito"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_formacao"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_funcao"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_herdeiro"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_hieraquia"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_lugar_nascimento"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_lugar_sepultura"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_oficio"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tem_testamento"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#tem_citacao"/>
+        <ObjectProperty IRI="#citado_em"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#e_controlado"/>
+        <ObjectProperty IRI="#controla"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#tem_relacao"/>
+        <ObjectProperty IRI="#tem_relacao"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#citado_em"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#controla"/>
+        <Class IRI="#Historiador"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#criado_em"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#diocese_nascimento"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#diocese_sepultura"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#e_controlado"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#e_dependente"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#e_pessoa_dependente"/>
+        <Class IRI="#Clero_Dependencia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#e_pessoa_parente"/>
+        <Class IRI="#Relacao_Parente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#e_proprietario"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#envolve_bem"/>
+        <Class IRI="#Doacao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#envolve_doacao"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#envolve_fundacao"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estuda_clero"/>
+        <Class IRI="#Historiador"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pertence_a"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pertence_a"/>
+        <Class IRI="#Igreja"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pertence_ao_arquivo"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#redigido_em"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#refere_a_documento"/>
+        <Class IRI="#Posicao_Clero_Doc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#situado_em"/>
+        <Class IRI="#Arquivo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_citacao"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_clero_dependencia"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_aquisacao"/>
+        <Class IRI="#Bem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_controlo"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_controlo"/>
+        <Class IRI="#Historiador"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_criacao"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_criacao"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_feitura"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_fim"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_fim"/>
+        <Class IRI="#Hierarquia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_inicio"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_inicio"/>
+        <Class IRI="#Hierarquia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_nascimento"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_nascimento"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_obito"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_data_obito"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_dependente"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_formacao"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_funcao"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_herdeiro"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_hieraquia"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_lugar_nascimento"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_lugar_sepultura"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_oficio"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_oficio"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_posicao_documento"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_relacao"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_relacao_parente"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_testamento"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tem_testemunha"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#citado_em"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#controla"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#criado_em"/>
+        <Class IRI="#Lugar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#diocese_nascimento"/>
+        <Class IRI="#Diocese"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#diocese_sepultura"/>
+        <Class IRI="#Diocese"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#e_controlado"/>
+        <Class IRI="#Historiador"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#e_dependente"/>
+        <Class IRI="#Clero_Dependencia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#e_pessoa_dependente"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#e_pessoa_parente"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#e_proprietario"/>
+        <Class IRI="#Bem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#envolve_bem"/>
+        <Class IRI="#Bem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#envolve_doacao"/>
+        <Class IRI="#Doacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#envolve_fundacao"/>
+        <Class IRI="#Fundacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estuda_clero"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pertence_a"/>
+        <Class IRI="#Diocese"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pertence_a"/>
+        <Class IRI="#Ordem_Sacra"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pertence_ao_arquivo"/>
+        <Class IRI="#Arquivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#redigido_em"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#refere_a_documento"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#situado_em"/>
+        <Class IRI="#Lugar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_citacao"/>
+        <Class IRI="#Clero"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_clero_dependencia"/>
+        <Class IRI="#Clero_Dependencia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_aquisacao"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_controlo"/>
+        <Class IRI="#Documento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_criacao"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_feitura"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_fim"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_inicio"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_nascimento"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_data_obito"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_dependente"/>
+        <Class IRI="#Clero_Dependencia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_formacao"/>
+        <Class IRI="#Formacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_funcao"/>
+        <Class IRI="#Funcao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_herdeiro"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_hieraquia"/>
+        <Class IRI="#Hierarquia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_lugar_nascimento"/>
+        <Class IRI="#Lugar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_lugar_sepultura"/>
+        <Class IRI="#Lugar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_oficio"/>
+        <Class IRI="#Oficio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_posicao_documento"/>
+        <Class IRI="#Posicao_Clero_Doc"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_relacao"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_relacao_parente"/>
+        <Class IRI="#Relacao_Parente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_testamento"/>
+        <Class IRI="#Testamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tem_testemunha"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#catEclesiastica"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#causa"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#causaSaida"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#curso"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#dataTopica"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#data_de_aquisacao"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#data_de_criacao"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#data_de_obito"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#data_fim"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#data_inicio"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descricao"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#eclesioasticosRef"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#entEmiss"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#estatuto"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#fundoTitulo"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#grau"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#maco"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#nomeProprio"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#normalizado"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#numClerigos"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#numFolio"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#observacoes"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ordemSacra"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#prebendado"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#publicado"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#rendaPreco"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#situacaoDitou"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#sumario"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#terceiroElemento"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoBem"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoDependencia"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoDoc"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoOficio"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoParentesco"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoTerceiroElemento"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tipoTransacao"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#universidade"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#arquivo"/>
+        <Class IRI="#Arquivo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#catEclesiastica"/>
+        <Class IRI="#Colacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#catEclesiastica"/>
+        <Class IRI="#Hierarquia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#causa"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#causaSaida"/>
+        <Class IRI="#Hierarquia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#curso"/>
+        <Class IRI="#Formacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dataTopica"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_aquisacao"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_aquisacao"/>
+        <Class IRI="#Data"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_criacao"/>
+        <Class IRI="#Data"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_criacao"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_feitura"/>
+        <Class IRI="#Data"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_feitura"/>
+        <Class IRI="#Testamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_obito"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_de_obito"/>
+        <Class IRI="#Data"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_fim"/>
+        <Class IRI="#Data"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_fim"/>
+        <Class IRI="#Hierarquia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_inicio"/>
+        <Class IRI="#Data"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data_inicio"/>
+        <Class IRI="#Hierarquia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descricao"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#diocese"/>
+        <Class IRI="#Colacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#diocese"/>
+        <Class IRI="#Hierarquia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#diocese"/>
+        <Class IRI="#Ordem_Sacra"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dioceseNascimento"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dioceseSepultura"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#eclesioasticosRef"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#entEmiss"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#estatuto"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#estatuto"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#funcaoEstatuto"/>
+        <Class IRI="#Funcao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#fundoTitulo"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#grau"/>
+        <Class IRI="#Formacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#igreja"/>
+        <Class IRI="#Colacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#igreja"/>
+        <Class IRI="#Hierarquia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#igreja"/>
+        <Class IRI="#Ordem_Sacra"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#local"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#local"/>
+        <Class IRI="#Funcao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#local"/>
+        <Class IRI="#Testamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#localFuncao"/>
+        <Class IRI="#Funcao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#localNascimento"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#localRedigido"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#localSepultura"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maco"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nomeDonatario"/>
+        <Class IRI="#Doacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nomeInstituicaoBenef"/>
+        <Class IRI="#Doacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nomeProprio"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nomeProprio"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#normalizado"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numClerigos"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numFolio"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observacoes"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observacoes"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observacoes"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observacoes"/>
+        <Class IRI="#Fundacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observacoes"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ordemSacra"/>
+        <Class IRI="#Colacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#patronimico"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#patronimico"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#posicaoCleroDoc"/>
+        <Class IRI="#Posicao_Clero_Doc"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#prebendado"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#publicado"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#rendaPreco"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sinaisVal"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#situacaoDitou"/>
+        <Class IRI="#Testamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sumario"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#terceiroElemento"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#terceiroElemento"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoBem"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoDependencia"/>
+        <Class IRI="#Clero_Dependencia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoDoc"/>
+        <Class IRI="#Documento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoFundacao"/>
+        <Class IRI="#Fundacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoOficio"/>
+        <Class IRI="#Oficio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoParentesco"/>
+        <Class IRI="#Relacao_Parente"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoTerceiroElemento"/>
+        <Class IRI="#Clero"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoTerceiroElemento"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tipoTransacao"/>
+        <Class IRI="#Bem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#universidade"/>
+        <Class IRI="#Formacao"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#arquivo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#catEclesiastica"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#causa"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#causaSaida"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#curso"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">DireitoCanónico</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">DireitoIndeterminado</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">NãoEspecificado</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dataTopica"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data_de_aquisacao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data_de_criacao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data_de_feitura"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data_de_obito"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data_fim"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data_inicio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#descricao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#eclesioasticosRef"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#entEmiss"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#estatuto"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#funcaoEstatuto"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#fundoTitulo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#grau"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Doutor</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Mestre</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">NãoEspecificado</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maco"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nomeProprio"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#normalizado"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">duvida</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">nao</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">sim</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numClerigos"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numFolio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#observacoes"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ordemSacra"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Acólito</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Diácono</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Exorcista</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Presbítero</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Subdiácone</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Tonsurado</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#patronimico"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#posicaoCleroDoc"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#prebendado"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Sim</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">seminformação</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#publicado"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#rendaPreco"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#sinaisVal"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#situacaoDitou"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#sumario"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#terceiroElemento"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoBem"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Imóvel</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Móvel</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Renda</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Semovente</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoDependencia"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoDoc"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoFundacao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoOficio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoParentesco"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Afilhado</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Afilhhada</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Ama</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Avô</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Barregã</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Colaço</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Cunhada</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Cunhado</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Filha</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Filho</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Irmâ</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Irmão</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Mãe</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Pai</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Prima</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Sobrinho</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Tia</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Tio</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoTerceiroElemento"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Alcunha</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Apelido</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Ausente</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Profissão</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Proveniência/Residência</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tipoTransacao"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Aforamento</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Arrendamento</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Compra</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Doação</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Emprazamento</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Escambo</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Herança-Materna</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Herança-Paterna</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Herança-indeterminada</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Ignorado</Literal>
+            <Literal datatypeIRI="&rdf;PlainLiteral">Préstamo</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#universidade"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#data_de_nascimento"/>
+        <IRI>#clero1</IRI>
+        <IRI>#dataNasc1</IRI>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

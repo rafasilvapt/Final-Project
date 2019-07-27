@@ -1,0 +1,187 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/nelsonsa12/ontologies/2018/3/untitled-ontology-12#
+
+[SourceDeclaration]
+sourceUri	Clero
+connectionUrl	jdbc:mysql://localhost:3306/siepfinal
+username	root
+password 
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	Clero
+target		:Clero#{codCler} a :Clero ; :citado_em :Documento#{cotaDoc} .
+source		SELECT c.CodClerigo as codCler, d.CotaDocumento as cotaDoc FROM clerocatedralicio AS c INNER JOIN clerodocumentos AS cd ON codCler=cd.CodClerigo INNER JOIN documentos AS d ON cotaDoc=cd.CotaDocumento
+
+mappingId	Clero2
+target		:Clero#{codCler} a :Clero ; :e_proprietario :Bem#{codBem} .
+source		SELECT c.CodClerigo as codCler, b.CodBem as codBem FROM clerocatedralicio AS c INNER JOIN bens AS b ON codCler=b.CodClerigo
+
+mappingId	Clero3
+target		:Clero#{codCler} a :Clero ; :pertence_a :Ordem_Sacra#{codOrd} .
+source		SELECT c.CodClerigo as codCler, os.CodOrdenacao as codOrd FROM clerocatedralicio AS c INNER JOIN ordenssacras AS os ON codCler=os.CodClerigo
+
+mappingId	Clero4
+target		:Clero#{codCler} a :Clero ; :tem_formacao :Formacao#{codForm} .
+source		SELECT c.CodClerigo as codCler, f.CodFormacao as codForm FROM clerocatedralicio AS c INNER JOIN formacao AS f ON codCler=f.CodClerigo
+
+mappingId	Clero5
+target		:Clero#{codCler} a :Clero ; :tem_funcao :Funcao#{codCleroFunc} .
+source		SELECT c.CodClerigo as codCler, cf.CodCleroFuncao as codCleroFunc FROM clerocatedralicio AS c INNER JOIN clerofuncoes AS cf ON codCler=cf.CodClerigo
+
+mappingId	Clero6
+target		:Clero#{codCler} a :Clero ; :tem_hieraquia :Hieraraquia#{codCleroC} .
+source		SELECT c.CodClerigo as codCler, h.CodCleroCat as codCleroC  FROM clerocatedralicio AS c INNER JOIN clerocathierarquica AS h ON codCler=h.CodClerigo
+
+mappingId	Clero7
+target		:Clero#{codCler} a :Clero ; :tem_oficio :Oficio#{codOfic} .
+source		SELECT c.CodClerigo as codCler, o.CodOficio as codOfic FROM clerocatedralicio AS c INNER JOIN clerooficios AS o ON codCler=o.CodClerigo
+
+mappingId	Clero8
+target		:Clero#{codCler} a :Clero ; :tem_testamento :Testamento#{codUltV} .
+source		SELECT c.CodClerigo as codCler, t.CodUltVontade as codUltV FROM clerocatedralicio AS c INNER JOIN ultimasvontades AS t ON codCler=t.CodClerigo
+
+mappingId	Clero9
+target		:Clero#{CodClerigo} a :Clero ; :nomeProprio {NomeProprio} ; :observacoes {Observacoes} ; :patronimico {Patronimico} ; :prebendado {Prebendado} ; :terceiroElemento {TerceiroElemento} ; :tipoTerceiroElemento {TipoTerceiroElem} ; :localNascimento {LocalNasc} ; :localSepultura {LocalSepul} ; :dioceseNascimento {DioceseNasc} ; :dioceseSepultura {DioceseSepul} ; :data_de_obito {DataObito} .
+source		SELECT CodClerigo, NomeProprio, Observacoes, Patronimico, Prebendado, TerceiroElemento, TipoTerceiroElem, LocalNasc, LocalSepul, DioceseNasc, DioceseSepul, DataObito FROM clerocatedralicio
+
+mappingId	Documento
+target		:Documento#{CotaDocumento} a :Documento ; :pertence_ao_arquivo :Arquivo#{Arquivo} ; :e_controlado :Historiador#{historiador} .
+source		SELECT CotaDocumento, historiador, Arquivo FROM documentos
+
+mappingId	Documento2
+target		:Documento#{CotaDocumento} a :Documento ; :dataTopica {DataTopica} ; :eclesioasticosRef {EclesiasticosRef} ; :entEmiss {EntEmiss} ; :fundoTitulo {FundoTitulo} ; :maco {Maco} ; :numClerigos {NumClerigos} ; :numFolio {NumFolio} ; :observacoes {Observacoes} ; :publicado {Publicado} ; :sumario {Sumario} ; :sinaisVal {SinaisVal} ; :localRedigido {Localred} ; :data_de_criacao {DataCron} .
+source		SELECT CotaDocumento, DataTopica, EclesiasticosRef, EntEmiss, FundoTitulo, Maco, NumClerigos, NumFolio, Observacoes, Publicado, Sumario, SinaisVal, LocalRed, DataCron FROM documentos
+
+mappingId	Bem
+target		:Bem#{CodBem} a :Bem ; :data_de_aquisacao {DataAquisicao} ; :descricao {Descricao} ; :observacoes {Observacoes} ; :rendaPreco {RendaPreco} ; :tipoBem {TipoBem} ; :tipoTransacao {TipoTransaccao} ; :local {Local} .
+source		SELECT CodBem, DataAquisicao, Descricao, Observacoes, RendaPreco, TipoBem, TipoTransaccao, Local FROM bens
+
+mappingId	Colacao
+target		:Colacao#{CodColacao} a :Colacao ; :catEclesiastica {CatEclesiastica} ; :igreja {Igreja} ; :diocese {Diocese} .
+source		SELECT CodColacao, CatEclesiastica, Igreja, Diocese FROM colacoes
+
+mappingId	Fundacao
+target		:Fundacao#{CodFund} a :Fundacao ; :tipoFundacao {TipoFundacao} ; :observacoes {Observacoes} ; :local {Local} .
+source		SELECT CodFund, TipoFundacao, Observacoes, Local FROM ultimasvontadesfundacoes
+
+mappingId	Oficio
+target		:Oficio#{CodOficio} a :Oficio ; :tipoOficio {TipoOficio} .
+source		SELECT CodOficio, TipoOficio FROM clerooficios
+
+mappingId	Funcao
+target		:Funcao#{CodCleroFuncao} a :Funcao ; :funcaoEstatuto {FuncaoEstatuto} ; :local {Local} .
+source		SELECT CodCleroFuncao, FuncaoEstatuto, Local FROM clerofuncoes
+
+mappingId	Formacao
+target		:Formacao#{CodFormacao} a :Formacao ; :grau {Grau} ; :curso {Curso} ; :universidade {Universidade} .
+source		SELECT CodFormacao, Grau, Curso, Universidade FROM formacao
+
+mappingId	Ordem_Sacra
+target		:Ordem_Sacra#{CodOrdenacao} a :Ordem_Sacra ; :ordemSacra {OrdemSacra} ; :diocese {Diocese} ; :igreja {Igreja} .
+source		SELECT CodOrdenacao, OrdemSacra, Diocese, Igreja FROM ordenssacras
+
+mappingId	Pessoa
+target		:Pessoa#{codIndRel} a :Pessoa ; :e_dependente :Clero#{codCler} .
+source		SELECT p.CodIndRelacionado as codIndRel, c.CodClerigo as codCler FROM clerocatedralicio AS c INNER JOIN clerodependentes AS cp ON codCler = cp.CodClerigo INNER JOIN individuosrelacionados AS p ON cp.CodIndRelacionado = codIndRel
+
+mappingId	Pessoa2
+target		:Pessoa#{codIndRel} a :Pessoa ; :tem_oficio :Oficio#{codOfic} .
+source		SELECT p.CodIndRelacionado as codIndRel, o.CodOficio as codOfic FROM individuosrelacionados AS p INNER JOIN clerooficios as o ON o.CodIndRelacionado = codIndRel
+
+mappingId	Pessoa3
+target		:Pessoa#{CodIndRelacionado} a :Pessoa ; :nomeProprio {NomeProprio} ; :observacoes {Observacoes} ; :patronimico {Patronimico} ; :terceiroElemento {TerceiroElemento} ; :tipoTerceiroElemento {TipoTerceiroElemento} ; :estatuto {Estatuto} ; :localFuncao {LocalFuncao} .
+source		SELECT NomeProprio, Observacoes, Patronimico, TerceiroElemento, TipoTerceiroElemento, Estatuto, LocalFuncao FROM individuosrelacionados
+
+mappingId	Historiador
+target		:Historiador#{historiador} a :Historiador ; :controla :Documento#{CotaDocumento} .
+source		SELECT historiador, CotaDocumento FROM documentos
+
+mappingId	Historiador2
+target		:Historiador#{historiador} a :Historiador ; :estuda_clero :Clero#{CodClerigo} .
+source		SELECT historiador, CodClerigo FROM clerocatedralicio
+
+mappingId	Testamento
+target		:Testamento#{codUltV} a :Testamento ; :envolve_fundacao :Fundacao#{CodFund} .
+source		SELECT t.CodUltVontade as codUltV, f.CodFund FROM ultimasvontades AS t INNER JOIN ultimasvontadesfundacoes AS f ON codUltV = f.CodUltVont
+
+mappingId	Testamento2
+target		:Testamento#{codUltV} a :Testamento ; :envolve_doacao :Doacao#{CodDoacao} .
+source		SELECT t.CodUltVontade as codUltV, d.CodDoacao FROM ultimasvontades AS t INNER JOIN ultimasvontadesbens AS d ON codUltV = d.CodUltVontade
+
+mappingId	Testamento3
+target		:Testamento#{CodUltVontade} a :Testamento ; :tem_testemunha :Pessoa#{codIndRel} .
+source		SELECT t.CodUltVontade, p.CodIndRelacionado as codIndRel FROM ultimasvontades AS t INNER JOIN individuosrelacionados AS p ON t.CodIndRelTest = codIndRel
+
+mappingId	Testamento4
+target		:Testamento#{CodUltVontade} a :Testamento ; :tem_herdeiro :Pessoa#{codIndRel} .
+source		SELECT t.CodUltVontade, p.CodIndRelacionado as codIndRel FROM ultimasvontades AS t INNER JOIN individuosrelacionados AS p ON t.CodIndRelRed = codIndRel
+
+mappingId	Testamento5
+target		:Testamento#{CodUltVontade} a :Testamento ; :data_de_feitura {DataFeitura} ; :situacaoDitou {SituacaoDitou} ; :local {Local} .
+source		SELECT DataFeitura, SituacaoDitou, Local FROM ultimasvontades
+
+mappingId	Doacao
+target		:Doacao#{CodDoacao} a :Doacao ; :envolve_bem :Bem#{codBem} .
+source		SELECT d.CodDoacao, b.CodBem as codBem FROM ultimasvontadesbens AS d INNER JOIN bens AS b ON d.BensDoados = codBem
+
+mappingId	Doacao2
+target		:Doacao#{CodDoacao} a :Doacao ; :nomeInstituicaoBenef {NomeInstitBenef} ; :nomeDonatario {NomeDonatario} .
+source		SELECT NomeInstitBenef, NomeDonatario FROM ultimasvontadesbens
+
+mappingId	Hierarquia
+target		:Hierarquia#{CodCleroCat} a :Hierarquia ; :catEclesiastica {CatEclesiastica} ; :data_inicio {DataInicio} ; :data_fim {DataFim} ; :igreja {Igreja} ; :diocese {Diocese} ; :causaSaida {CausaSaida} .
+source		SELECT Cateclesiastica, DataInicio, DataFim, Igreja, Diocese, Causasaida FROM clerocathierarquica
+
+mappingId	Documento3
+target		:Documento#{cotaDoc} a :Documento ; :tem_citacao :Clero#{codCler} .
+source		SELECT d.CotaDocumento as cotaDoc, c.CodClerigo as codCler  FROM clerocatedralicio AS c INNER JOIN clerodocumentos AS cd ON codCler=cd.CodClerigo INNER JOIN documentos AS d ON cotaDoc=cd.CotaDocumento
+
+mappingId	Clero10
+target		:Clero#{codCler} a :Clero ; :tem_dependente :Pessoa#{codIndRel} .
+source		SELECT c.CodClerigo as codCler, p.CodIndRelacionado as codIndRel FROM clerocatedralicio AS c INNER JOIN clerodependentes AS cp ON codCler = cp.CodClerigo INNER JOIN individuosrelacionados AS p ON cp.CodIndRelacionado = codIndRel
+
+mappingId	Clero11
+target		:Clero#{codCler} a :Clero ; :tem_relacao :Pessoa#{codIndRel} .
+source		SELECT c.CodClerigo as codCler, p.CodIndRelacionado as codIndRel FROM clerocatedralicio AS c INNER JOIN cleroparentes AS cp ON codCler = cp.CodClerigo INNER JOIN individuosrelacionados AS p ON cp.CodIndRelacionado = codIndRel
+
+mappingId	Pessoa4
+target		:Pessoa#{codIndRel} a :Pessoa ; :tem_relacao :Clero#{codCler} .
+source		SELECT p.CodIndRelacionado as codIndRel, c.CodClerigo as codCler FROM clerocatedralicio AS c INNER JOIN cleroparentes AS cp ON codCler = cp.CodClerigo INNER JOIN individuosrelacionados AS p ON codIndRel = p.CodIndRelacionado
+
+mappingId	Clero12
+target		:Clero#{codCler} a :Clero ; :tem_clero_dependencia :Clero_Dependencia#{CodCleroDependente} .
+source		SELECT c.CodClerigo as codCler, d.CodCleroDependente FROM clerocatedralicio AS c INNER JOIN clerodependentes AS d ON codCler=d.CodClerigo
+
+mappingId	Clero14
+target		:Clero#{codCler} a :Clero ; :tem_posicao_documento :Posicao_Clero_Doc#{Codclerodocs} .
+source		SELECT c.CodClerigo as codCler, d.Codclerodocs FROM clerocatedralicio AS c INNER JOIN clerodocumentos AS d ON codCler=d.CodClerigo
+
+mappingId	Clero_Depend
+target		:Clero_Dependencia#{CodCleroDependente} a :Clero_Dependencia ; :e_pessoa_dependente :Pessoa#{codIndRel} .
+source		SELECT c.CodCleroDependente, p.CodIndRelacionado as codIndRel FROM clerodependentes AS c INNER JOIN individuosrelacionados AS p ON c.CodIndRelacionado=codIndRel
+
+mappingId	Clero_Depend2
+target		:Clero_Dependencia#{CodCleroDependente} a :Clero_Dependencia ; :tipoDependencia {TipoDependencia} .
+source		SELECT TipoDependencia FROM clerodependentes
+
+mappingId	Relacao_Parente
+target		:Relacao_Parente#{CodParente} a :Clero_Dependencia ; :e_pessoa_parente :Pessoa#{codIndRel} .
+source		SELECT c.CodParente, p.CodIndRelacionado as codIndRel FROM cleroparentes AS c INNER JOIN individuosrelacionados AS p ON c.CodIndRelacionado=codIndRel
+
+mappingId	Relacao_Parente2
+target		:Relacao_Parente#{CodParente} a :Relacao_Parente ; :tipoParentesco {TipoParentesco} .
+source		SELECT TipoParentesco FROM cleroparentes
+
+mappingId	Posicao_Clero
+target		:Posicao_Clero_Doc#{Codclerodocs} a :Posicao_Clero_Doc ; :refere_a_documento :Documento#{cotaDoc} .
+source		SELECT c.Codclerodocs, d.CotaDocumento as cotaDoc FROM clerodocumentos AS c INNER JOIN documentos AS d ON c.CotaDocumento=cotaDoc
+
+mappingId	Posicao_Clero2
+target		:Posicao_Clero_Doc#{Codclerodocs} a :Posicao_Clero_Doc ; :posicaoCleroDoc {PosicaoCleroDoc} .
+source		SELECT PosicaoCleroDoc FROM clerodocumentos
+
+mappingId	Clero13
+target		:Clero#{codCler} a :Clero ; :tem_relacao_parente :Relacao_Parente#{CodParente} .
+source		SELECT c.CodClerigo as codCler, cp.CodParente FROM clerocatedralicio AS c INNER JOIN cleroparentes AS cp ON codCler=cp.CodClerigo
+]]
